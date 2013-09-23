@@ -5,6 +5,10 @@ body {
     letter-spacing: 1px;
 }
 
+#background {
+    filter: url(#blur);
+}
+
 .fullscreen {
     display: block;
     width: 100%;

@@ -8,18 +8,20 @@
 <script type="text/javascript" src="lockScreen.js"></script>
 </head>
 <body>
-    <img id="background" class="fullscreen" src="bud.jpg">
     <svg    class="fullscreen"
             xmlns="http://www.w3.org/2000/svg" 
             version="1.1"
             xmlns:xlink="http://www.w3.org/2000/xlink">
          <defs>
+            <filter id="blur">
+                <feGaussianBlur x="0" y="0" width="100%" height="100%" stdDeviation="10"/>
+            </filter>
             <mask id="keypadMask" maskUnits="userSpaceOnUse">
                 <rect x="0" y="0" width="100%" height="100%" fill="white"/>
-                <text x="10%" y="30%" width="100%" height="100%" style="font-family: HelveticaNeue-Light; font-size: 200px; fill: black;">hello world</text>
+                <text x="10%" y="30%" width="100%" height="100%" style="font-family: HelveticaNeue-Light; font-size: 48pt; fill: black;">hello world</text>
             </mask>
          </defs>
-         <rect x="0" y="0" width="100%" height="100%" fill="rgba(0,0,0,0.65)" mask="url(#keypadMask)"/>
+         <image width="100%" height="100%" xlink:href="bud.jpg" filter="url(#blur)"/>
+         <rect width="100%" height="100%" fill="rgba(0,0,0,0.65)" mask="url(#keypadMask)"/>
     </svg>
-    </img>
 </body>
